@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { data, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { supabase } from "../supabase-client";
 
 interface CommunityInput {
@@ -20,7 +20,7 @@ export const CreateCommunity = () => {
     const [description, setDescription] = useState<string>("");
     const navigate = useNavigate();
     const queryClient = useQueryClient();
-    
+
     const {mutate, isPending, isError} = useMutation({
         mutationFn: createCommunity,
         onSuccess: () => {
