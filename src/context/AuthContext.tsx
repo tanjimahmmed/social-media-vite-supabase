@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     }, []);
 
-    const signInWithGitHub = () => {
+    const signInWithGithub = () => {
         supabase.auth.signInWithOAuth({provider: "github"})
     };
 
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     return (
-        <AuthContext.Provider value={{user, signInWithGitHub, signOut}}>
+        <AuthContext.Provider value={{user, signInWithGithub, signOut}}>
             {children}
         </AuthContext.Provider>
     )
